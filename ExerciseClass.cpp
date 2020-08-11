@@ -7,14 +7,14 @@ ExerciseClass::ExerciseClass() {
     numSets = 0;
 }
 
-ExerciseClass::ExerciseClass(std::string inputExerciseName,
-                             int inputNumSets,
-                             std::vector<int> inputRepsPerSet,
-                             std::vector<double> inputWeightPerSet) {
+ExerciseClass::ExerciseClass(std::string inputExerciseName, int inputNumSets) {
     exerciseName = inputExerciseName;
     numSets = inputNumSets;
-    repsPerSet = inputRepsPerSet;
-    weightPerSet = inputWeightPerSet;
+    
+    for (int setNumber = 0; setNumber < numSets; setNumber++)
+    {
+        setObjects.push_back(SetClass());
+    }
 }
 
 std::string ExerciseClass::getExerciseName() {
@@ -25,27 +25,18 @@ int ExerciseClass::getNumSets() {
     return numSets;
 }
 
-std::vector<int> ExerciseClass::getRepsPerSet() {
-    return repsPerSet;
-}
-
 int ExerciseClass::getRepsOfSet(int setNumber) {
-    return repsPerSet[setNumber];
-}
-
-std::vector<double> ExerciseClass::getWeightPerSet() {
-    return weightPerSet;
+    return setObjects[setNumber].getNumReps();
 }
 
 double ExerciseClass::getWeightOfSet(int setNumber) {
-    return weightPerSet[setNumber];
+    return setObjects[setNumber].getWeight();
 }
 
 void ExerciseClass::clearData() {
     exerciseName = "N/A";
     numSets = 0;
-    repsPerSet.clear();
-    weightPerSet.clear();
+    setObjects.clear();
 }
 
 void ExerciseClass::setExerciseName(std::string newExerciseName) {
@@ -53,39 +44,35 @@ void ExerciseClass::setExerciseName(std::string newExerciseName) {
 }
 
 void ExerciseClass::setNumSets(int newNumSets) {
+    // Append empty sets if newNumSets > numSets
+    if(newNumSets > numSets) 
+    {
+        for(int setNumber = numSets; setNumber < newNumSets; setNumber++)
+        {
+            setObjects.push_back(SetClass());
+        }
+    }
+
+    // Pop SetClass objects from setObjects if newNumSets < numSets
+    else if(newNumSets < numSets)
+    {
+        for(int setNumber = numSets; setNumber > newNumSets; setNumber--)
+        {
+            setObjects.pop_back();
+        }
+    }
+
     numSets = newNumSets;
 }
 
-void ExerciseClass::setRepsPerSet(std::vector<int> newRepsPerSet) {
-    this->clearReps();
-
-    for (int setNumber(0); setNumber < numSets; setNumber++)
-    {
-        this->appendReps(newRepsPerSet[setNumber]);
-    }
+void ExerciseClass::setRepsOfSet(int setNumber, int numReps) {
+    setObjects[setNumber].setNumReps(numReps);
 }
 
-void ExerciseClass::setWeightPerSet(std::vector<double> newWeightPerSet) {
-    this->clearWeight();
-
-    for (int setNumber(0); setNumber < numSets; setNumber++)
-    {
-        this->appendWeight(newWeightPerSet[setNumber]);
-    }
+void ExerciseClass::setWeightOfSet(int setNumber, double weight) {
+    setObjects[setNumber].setWeight(weight);
 }
 
-void ExerciseClass::appendReps(int numReps) {
-    repsPerSet.push_back(numReps);
-}
-
-void ExerciseClass::clearReps() {
-    repsPerSet.clear();
-}
-
-void ExerciseClass::appendWeight(double weight) {
-    weightPerSet.push_back(weight);
-}
-
-void ExerciseClass::clearWeight() {
-    weightPerSet.clear();
+void ExerciseClass::appendSet() {
+    setObjects.push_back(SetClass());
 }

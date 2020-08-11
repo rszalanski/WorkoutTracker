@@ -17,7 +17,13 @@ void testWorkoutClass() {
 
     int setIndex = 2;
 
-    ExerciseClass testExercise(fakeName, fakeNumSets, fakeReps, fakeWeights);
+    ExerciseClass testExercise(fakeName, fakeNumSets);
+    
+    for(int setNumber = 0; setNumber < fakeNumSets; setNumber++)
+    {
+        testExercise.setRepsOfSet(setNumber, fakeReps[setNumber]);
+        testExercise.setWeightOfSet(setNumber, fakeWeights[setNumber]);
+    }
 
     std::cout << "OLD==================================================\n";
     std::cout << "Exercise: " << testExercise.getExerciseName() << '\n';
@@ -27,8 +33,12 @@ void testWorkoutClass() {
 
     testExercise.setExerciseName(exerciseName);
     testExercise.setNumSets(numSets);
-    testExercise.setRepsPerSet(repsPerSet);
-    testExercise.setWeightPerSet(weightPerSet);
+
+    for(int setNumber = 0; setNumber < numSets; setNumber++)
+    {
+        testExercise.setRepsOfSet(setNumber, repsPerSet[setNumber]);
+        testExercise.setWeightOfSet(setNumber, weightPerSet[setNumber]);
+    }
 
     std::cout << "NEW==================================================\n";
     std::cout << "Exercise: " << testExercise.getExerciseName() << '\n';
@@ -39,9 +49,6 @@ void testWorkoutClass() {
 
 int main() {
     testWorkoutClass();
-
-    int x;
-    std::cin >> x;
 
     return 0;
 }

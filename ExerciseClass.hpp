@@ -19,14 +19,9 @@ class ExerciseClass {
         //
         /// @param [std::string] inputExerciseName: Name of the exercise
         /// @param [int] inputNumSets: Number of sets of the exercise completed
-        /// @param [std::vector<int>] inputRepsPerSet: Number of reps per set of the exercise
-        /// @param [std::vector<double>] inputWeightPerSet: Amount of weight used per set of the exercise
         //
         /// @return None
-        ExerciseClass(std::string inputExerciseName,
-                      int inputNumSets,
-                      std::vector<int> inputRepsPerSet,
-                      std::vector<double> inputWeightPerSet);
+        ExerciseClass(std::string inputExerciseName, int inputNumSets);
 
         /// @brief getExerciseName
         //
@@ -42,26 +37,12 @@ class ExerciseClass {
         /// @return [int] numSets: The number of sets of the exercise done
         int getNumSets();
 
-        /// @brief getRepsPerSet
-        //
-        /// @param None
-        //
-        /// @return [std::vector<int>] repsPerSet: A vector of the number of reps for each set of the exercise
-        std::vector<int> getRepsPerSet();
-
         /// @brief getRepsOfSet
         //
         /// @param [int] setNumber: The number of the set whose number of reps are desired
         //
         /// @return [int] numReps: The number of reps for the set number setNumber
         int getRepsOfSet(int setNumber);
-
-        /// @brief getWeightPerSet
-        //
-        /// @param None
-        //
-        /// @return [std::vector<double>] weightPerSet: A vector of the amount of weight for each set of the exercise
-        std::vector<double> getWeightPerSet();
 
         /// @brief getWeightOfSet
         //
@@ -91,55 +72,35 @@ class ExerciseClass {
         /// @return None
         void setNumSets(int newNumSets);
 
-        /// @brief setRepsPerSet
+        /// @brief setRepsOfSet
         //
-        /// @param [std::vector<int>] newRepsPerSet: A vector of the new numbers of reps for each set of the exercise
+        /// @param [int] setNumber: The number of the set whose value you are changing
+        /// @param [int] numReps: The number of reps to be assigned to the set
         //
         /// @return None
-        void setRepsPerSet(std::vector<int> newRepsPerSet);
+        void setRepsOfSet(int setNumber, int numReps);
 
-        /// @brief setWeightPerSet
+        /// @brief setRepsOfSet
         //
-        /// @param [std::vector<double>] newWeightPerSet: A vector of the new weights for each set of the exercise
+        /// @param [int] setNumber: The number of the set whose value you are changing
+        /// @param [double] weight: The amount of weight to be assigned to the set
         //
         /// @return None
-        void setWeightPerSet(std::vector<double> newWeightPerSet);
+        void setWeightOfSet(int setNumber, double weight);
+
+        /// @brief appendSet
+        //
+        /// @param None
+        //
+        /// @return None
+        void appendSet();
 
     protected:
 
     private:
-        /// @brief appendReps
-        //
-        /// @param [int] numReps: The number of reps to be appended to repsPerSet
-        //
-        /// @return None
-        void appendReps(int numReps);
-
-        /// @brief clearReps
-        //
-        /// @param None
-        //
-        /// @return None
-        void clearReps();
-
-        /// @brief appendWeight
-        //
-        /// @param [double] weight: The weight to be appended to weightPerSet
-        //
-        /// @return None
-        void appendWeight(double weight);
-
-        /// @brief clearWeight
-        //
-        /// @param None
-        //
-        /// @return None
-        void clearWeight();
-
         std::string exerciseName;
         int numSets;
-        std::vector<int> repsPerSet;
-        std::vector<double> weightPerSet;
+        std::vector<SetClass> setObjects;
 };
 
 #endif // EXERCISE_CLASS_HPP

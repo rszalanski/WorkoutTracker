@@ -23,21 +23,13 @@ double SetClass::getWeight() {
 }
 
 double SetClass::getTotalWeight() {
-    return totalWeight;
+    return numReps * weight;
 }
 
 void SetClass::setNumReps(int newNumReps) {
     numReps = newNumReps;
-    
-    calculateTotalWeight();
 }
 
 void SetClass::setWeight(double newWeight) {
     weight = newWeight;
-
-    calculateTotalWeight();
-}
-
-void SetClass::calculateTotalWeight() {
-    totalWeight = weight * numReps;
 }

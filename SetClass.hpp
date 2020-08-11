@@ -55,16 +55,8 @@ class SetClass {
 
     protected:
     private:
-        /// @brief calculateTotalWeight
-        //
-        /// @param None
-        //
-        /// @return None
-        void calculateTotalWeight();
-
         int numReps;
         double weight;
-        double totalWeight;
 };
 
 #endif // SET_CLASS_HPP

@@ -26,12 +26,12 @@ void testWorkoutClass() {
     }
 
     std::cout << "OLD==================================================\n";
-    std::cout << "Exercise: " << testExercise.getExerciseName() << '\n';
+    std::cout << "Exercise: " << testExercise.getName() << '\n';
     std::cout << "# of Sets: " << testExercise.getNumSets() << '\n';
     std::cout << "# of reps in set " << setIndex << ": " << testExercise.getRepsOfSet(setIndex) << '\n';
     std::cout << "Weight used in set " << setIndex << ": " << testExercise.getWeightOfSet(setIndex) << '\n';
 
-    testExercise.setExerciseName(exerciseName);
+    testExercise.setName(exerciseName);
     testExercise.setNumSets(numSets);
 
     for(int setNumber = 0; setNumber < numSets; setNumber++)
@@ -41,7 +41,7 @@ void testWorkoutClass() {
     }
 
     std::cout << "NEW==================================================\n";
-    std::cout << "Exercise: " << testExercise.getExerciseName() << '\n';
+    std::cout << "Exercise: " << testExercise.getName() << '\n';
     std::cout << "# of Sets: " << testExercise.getNumSets() << '\n';
     std::cout << "# of reps in set " << setIndex << ": " << testExercise.getRepsOfSet(setIndex) << '\n';
     std::cout << "Weight used in set " << setIndex << ": " << testExercise.getWeightOfSet(setIndex) << '\n';

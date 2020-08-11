@@ -54,6 +54,7 @@ class SetClass {
         void setWeight(double newWeight);
 
     protected:
+    
     private:
         int numReps;
         double weight;

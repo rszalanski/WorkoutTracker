@@ -17,7 +17,7 @@ ExerciseClass::ExerciseClass(std::string inputExerciseName, int inputNumSets) {
     }
 }
 
-std::string ExerciseClass::getExerciseName() {
+std::string ExerciseClass::getName() {
     return exerciseName;
 }
 
@@ -39,7 +39,7 @@ void ExerciseClass::clearData() {
     setObjects.clear();
 }
 
-void ExerciseClass::setExerciseName(std::string newExerciseName) {
+void ExerciseClass::setName(std::string newExerciseName) {
     exerciseName = newExerciseName;
 }
 
@@ -73,6 +73,6 @@ void ExerciseClass::setWeightOfSet(int setNumber, double weight) {
     setObjects[setNumber].setWeight(weight);
 }
 
-void ExerciseClass::appendSet() {
+void ExerciseClass::addSet() {
     setObjects.push_back(SetClass());
 }

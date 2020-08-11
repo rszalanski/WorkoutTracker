@@ -23,12 +23,12 @@ class ExerciseClass {
         /// @return None
         ExerciseClass(std::string inputExerciseName, int inputNumSets);
 
-        /// @brief getExerciseName
+        /// @brief getName
         //
         /// @param None
         //
         /// @return [std::string] exerciseName: The name of the exercise
-        std::string getExerciseName();
+        std::string getName();
 
         /// @brief getNumSets
         //
@@ -58,12 +58,12 @@ class ExerciseClass {
         /// @return None
         void clearData();
 
-        /// @brief setExerciseName
+        /// @brief setName
         //
         /// @param [std::string] newExerciseName: The new name of the exercise
         //
         /// @return None
-        void setExerciseName(std::string newExerciseName);
+        void setName(std::string newExerciseName);
 
         /// @brief setNumSets
         //
@@ -88,12 +88,12 @@ class ExerciseClass {
         /// @return None
         void setWeightOfSet(int setNumber, double weight);
 
-        /// @brief appendSet
+        /// @brief addSet
         //
         /// @param None
         //
         /// @return None
-        void appendSet();
+        void addSet();
 
     protected:
 

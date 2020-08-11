@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "ErrorCode.hpp"
+#include "SetClass.hpp"
 
 class ExerciseClass {
     public:

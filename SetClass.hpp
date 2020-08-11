@@ -32,6 +32,13 @@ class SetClass {
         /// @return [double] weight: The amount of weight used per rep in the set
         double getWeight();
 
+        /// @brief getTotalWeight
+        //
+        /// @param None
+        //
+        /// @return [double] totalWeight: The total weight lifted during the set
+        double getTotalWeight();
+
         /// @brief setNumReps
         //
         /// @param [int] newNumReps: The number of reps to be set as completed in the set
@@ -46,11 +53,18 @@ class SetClass {
         /// @return None
         void setWeight(double newWeight);
 
-
     protected:
     private:
+        /// @brief calculateTotalWeight
+        //
+        /// @param None
+        //
+        /// @return None
+        void calculateTotalWeight();
+
         int numReps;
         double weight;
+        double totalWeight;
 };
 
 #endif // SET_CLASS_HPP

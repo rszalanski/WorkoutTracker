@@ -20,6 +20,10 @@ int WorkoutClass::getNumExercises() {
     return numExercises;
 }
 
+ExerciseClass WorkoutClass::getExerciseNumber(int exerciseNumber) {
+    return exerciseObjects[exerciseNumber];
+}
+
 std::string WorkoutClass::getNameOfExercise(int exerciseNumber) {
     return exerciseObjects[exerciseNumber].getName();
 }

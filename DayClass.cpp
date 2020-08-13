@@ -27,6 +27,14 @@ int DayClass::getNumWorkouts() {
     return numWorkouts;
 }
 
+std::string DayClass::getDate() {
+    return date;
+}
+
+WorkoutClass DayClass::getWorkoutNumber(int workoutNumber) {
+    return workoutObjects[workoutNumber];
+}
+
 int DayClass::getNumExercisesInWorkout(int workoutNumber) {
     return workoutObjects[workoutNumber].getNumExercises();
 }

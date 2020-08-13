@@ -25,6 +25,10 @@ int ExerciseClass::getNumSets() {
     return numSets;
 }
 
+SetClass ExerciseClass::getSetNumber(int setNumber) {
+    return setObjects[setNumber];
+}
+
 int ExerciseClass::getRepsOfSet(int setNumber) {
     return setObjects[setNumber].getNumReps();
 }

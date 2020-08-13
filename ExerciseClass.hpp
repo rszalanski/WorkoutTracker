@@ -37,6 +37,13 @@ class ExerciseClass {
         /// @return [int] numSets: The number of sets of the exercise done
         int getNumSets();
 
+        /// @brief getSetNumber
+        //
+        /// @param [int] setNumber: The number of the set to be retrieved
+        //
+        /// @return [SetClass] set: The SetClass object assigned to setNumber
+        SetClass getSetNumber(int setNumber);
+
         /// @brief getRepsOfSet
         //
         /// @param [int] setNumber: The number of the set whose number of reps are desired

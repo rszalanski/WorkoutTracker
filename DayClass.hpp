@@ -31,6 +31,20 @@ class DayClass {
         /// @return [int] numWorkouts: The number of workouts completed in the day
         int getNumWorkouts();
 
+        /// @brief getDate
+        //
+        /// @param None
+        //
+        /// @return [std::string] date: The string representation of the date assigend to the DayClass object
+        std::string getDate();
+
+        /// @brief getWorkoutNumber
+        //
+        /// @param [int] workoutNumber: The number of the WorkoutClass object to retrieve
+        //
+        /// @return [WorkoutClass] workout: The WorkoutClass object assigned to workoutNumber
+        WorkoutClass getWorkoutNumber(int workoutNumber);
+
         /// @brief getNumExercisesInWorkout
         //
         /// @param [int] workoutNumber: The number of the workout whose number of exercises is requested
@@ -80,7 +94,7 @@ class DayClass {
         //
         /// @return None
         void updateDate();
-        
+
         int numWorkouts;
         std::vector<WorkoutClass> workoutObjects;
 

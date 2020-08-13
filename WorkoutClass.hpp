@@ -27,6 +27,13 @@ class WorkoutClass {
         /// @return [int] numExercises: The number of exercises in the workout
         int getNumExercises();
 
+        /// @brief getExerciseNumber
+        //
+        /// @param [int] exerciseNumber: The number of the exercise to be retrieved
+        //
+        /// @return [ExerciseClass] exercise: The ExerciseClass object assigned to exerciseNumber
+        ExerciseClass getExerciseNumber(int exerciseNumber);
+
         /// @brief getNameOfExercise
         //
         /// @param [int] exerciseNumber: The number of the exercise whose name is requested

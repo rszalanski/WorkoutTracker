@@ -75,4 +75,5 @@ void ExerciseClass::setWeightOfSet(int setNumber, double weight) {
 
 void ExerciseClass::addSet() {
     setObjects.push_back(SetClass());
+    numSets++;
 }

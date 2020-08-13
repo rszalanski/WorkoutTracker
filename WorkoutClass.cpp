@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 #include "ExerciseClass.hpp"
 #include "WorkoutClass.hpp"
 
@@ -59,4 +60,5 @@ void WorkoutClass::setSetsOfExercise(int exerciseNumber, int numSets) {
 
 void WorkoutClass::addExercise() {
     exerciseObjects.push_back(ExerciseClass());
+    numExercises++;
 }
